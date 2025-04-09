@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+const url = "https://tzufnywxqscsndrelzgq.supabase.co/rest/v1/personer";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6dWZueXd4cXNjc25kcmVsemdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyMTc0NTAsImV4cCI6MjA1OTc5MzQ1MH0.H8yA-T1SEPU6nE_xdzI3NBNujBk0zQelGvW_u-IWCVA";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const request = await fetch(url, options);
+const json = await request.json();
+
+console.log("json:", json);
+---
+
+<Layout title="home">
+  <Header title="Welcome Home">
+    <p>Feel right at home!</p>
+  </Header>
+</Layout>
+<style>
+  section {
+    padding: 2rem;
+  }
+</style>

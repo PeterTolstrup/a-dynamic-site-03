@@ -15,11 +15,14 @@ const request = await fetch(url, options);
 const json = await request.json();
 
 console.log("json:", json);
+
+const person = json[Math.floor(Math.random() * json.length)];
 ---
 
 <Layout title="home">
   <Header title="Welcome Home">
-    <p>Feel right at home!</p>
+    <p>This is the home of {person.name} {person.surname}</p>
+    <p>Who works for {person.company}</p>
   </Header>
 </Layout>
 <style>

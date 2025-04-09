@@ -12,11 +12,11 @@ const options = {
 };
 
 const request = await fetch(url, options);
-const json = await request.json();
+const data = await request.json();
 
-console.log("json:", json);
+console.log("data:", data);
 
-const person = json[Math.floor(Math.random() * json.length)];
+const person = data[Math.floor(Math.random() * data.length)];
 ---
 
 <Layout title="home">
